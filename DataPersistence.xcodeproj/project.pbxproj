@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D63C8B331AD62834005DD1C0 /* MakeFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D63C8B321AD62834005DD1C0 /* MakeFile.m */; };
 		D6FC79A31ACA41E20058AC9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FC79A21ACA41E20058AC9E /* main.m */; };
 		D6FC79A61ACA41E20058AC9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FC79A51ACA41E20058AC9E /* AppDelegate.m */; };
 		D6FC79A91ACA41E20058AC9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FC79A81ACA41E20058AC9E /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D63C8B311AD62834005DD1C0 /* MakeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeFile.h; sourceTree = "<group>"; };
+		D63C8B321AD62834005DD1C0 /* MakeFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeFile.m; sourceTree = "<group>"; };
 		D6FC799D1ACA41E20058AC9E /* DataPersistence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataPersistence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FC79A11ACA41E20058AC9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6FC79A21ACA41E20058AC9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				D6FC79A51ACA41E20058AC9E /* AppDelegate.m */,
 				D6FC79A71ACA41E20058AC9E /* ViewController.h */,
 				D6FC79A81ACA41E20058AC9E /* ViewController.m */,
+				D63C8B311AD62834005DD1C0 /* MakeFile.h */,
+				D63C8B321AD62834005DD1C0 /* MakeFile.m */,
 				D6FC79C61ACA42F10058AC9E /* SimpleObject.h */,
 				D6FC79C71ACA42F10058AC9E /* SimpleObject.m */,
 				D6FC79CB1ACA6D570058AC9E /* CustomObject.h */,
@@ -238,6 +243,7 @@
 				D6FC79A61ACA41E20058AC9E /* AppDelegate.m in Sources */,
 				D6FC79C81ACA42F10058AC9E /* SimpleObject.m in Sources */,
 				D6FC79A31ACA41E20058AC9E /* main.m in Sources */,
+				D63C8B331AD62834005DD1C0 /* MakeFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

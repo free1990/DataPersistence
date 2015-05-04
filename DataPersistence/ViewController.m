@@ -25,35 +25,74 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIButton *save = [UIButton buttonWithType:UIButtonTypeCustom];
+//    UIButton *save = [UIButton buttonWithType:UIButtonTypeCustom];
+//    
+//    [save setFrame:CGRectMake(100, 50, 100, 50)];
+//    [save setTitle:@"save" forState:UIControlStateNormal];
+//    [save setBackgroundColor:[UIColor blueColor]];
+//    [save addTarget:self action:@selector(saveObject) forControlEvents:UIControlEventTouchDown];
+//    
+//    [self.view addSubview:save];
+//    
+//    UIButton *read = [UIButton buttonWithType:UIButtonTypeCustom];
+//    
+//    [read setFrame:CGRectMake(100, 150, 100, 50)];
+//    [read setTitle:@"read" forState:UIControlStateNormal];
+//    [read setBackgroundColor:[UIColor blueColor]];
+//    [read addTarget:self action:@selector(readObject) forControlEvents:UIControlEventTouchDown];
+//    
+//    [self.view addSubview:read];
+//    
+//    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString* fileName = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"DataCnter"];
+//    
+//    self.archiving = fileName;
+//    
+//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    
+//    self.imageView.center = self.view.center;
+//    self.imageView.backgroundColor = [UIColor clearColor];
+//    
+//    [self.view addSubview:self.imageView];
     
-    [save setFrame:CGRectMake(100, 50, 100, 50)];
-    [save setTitle:@"save" forState:UIControlStateNormal];
-    [save setBackgroundColor:[UIColor blueColor]];
-    [save addTarget:self action:@selector(saveObject) forControlEvents:UIControlEventTouchDown];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    imageView.image = [self addImage:[UIImage imageNamed:@"top"] toImage:[UIImage imageNamed:@"test"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
     
-    [self.view addSubview:save];
+    if ([self returnTest]) {
+        NSLog(@"返回为yes");
+    }else{
+        NSLog(@"返回为yes");
+    }
+}
+
+- (BOOL)returnTest{
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            return YES;
+            break;
+        }
+    }
+    return NO;
+}
+
+- (UIImage *)addImage:(UIImage *)image1 toImage:(UIImage *)image2 {
     
-    UIButton *read = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGSize totalSize = CGSizeMake(MAX(image1.size.width, image2.size.width), image1.size.height + image2.size.height);
+    UIGraphicsBeginImageContext(totalSize);
     
-    [read setFrame:CGRectMake(100, 150, 100, 50)];
-    [read setTitle:@"read" forState:UIControlStateNormal];
-    [read setBackgroundColor:[UIColor blueColor]];
-    [read addTarget:self action:@selector(readObject) forControlEvents:UIControlEventTouchDown];
+    // Draw image1
+    [image1 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
     
-    [self.view addSubview:read];
+    // Draw image2
+    [image2 drawInRect:CGRectMake(0, image1.size.height, image2.size.width, image2.size.height)];
     
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* fileName = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"DataCnter"];
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    self.archiving = fileName;
+    UIGraphicsEndImageContext();
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    
-    self.imageView.center = self.view.center;
-    self.imageView.backgroundColor = [UIColor clearColor];
-    
-    [self.view addSubview:self.imageView];
+    return resultingImage;
 }
 
 - (void)saveObject
